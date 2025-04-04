@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PlanFree</title>
+  <style>
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #f5f5f5; }
+    header { background-color: #2c3e50; color: white; padding: 2rem; text-align: center; }
+    nav { background-color: #34495e; text-align: center; padding: 1rem; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    section { max-width: 900px; margin: 2rem auto; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+    h2 { color: #2c3e50; }
+    .package-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+    .package-box { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); transition: transform 0.5s ease, opacity 0.5s ease; opacity: 0; transform: translateY(30px); }
+    .package-box h3 { margin-top: 0; font-size: 1.4rem; color: #2c3e50; }
+    .package-box p { font-size: 1rem; color: #444; }
+    input, select, textarea { width: 100%; padding: 10px; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 5px; }
+    button { background-color: #0070ba; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+    footer { background-color:#2c3e50; color:white; padding:2rem; text-align:center; margin-top:3rem; font-size:0.9rem; }
+    footer a { color:#ffffff; margin: 0 10px; text-decoration:underline; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>PlanFree</h1>
+  <p>Piattaforma di viaggi no-profit – Scegli il tuo stile. Dona solo se vuoi.</p>
+</header>
+<nav>
+  <a href="#about">Chi sono</a>
+  <a href="#packages">Pacchetti</a>
+  <a href="#contact">Contatti</a>
+  <a href="#donate">Dona</a>
+</nav>
+
+<section id="about">
+  <h2>Chi sono</h2>
+  <p>Mi chiamo Gio, sono un ragazzo con una passione sconfinata per i viaggi e l'avventura. Fin da piccolo ho sognato di esplorare il mondo, scoprire culture diverse, vivere esperienze autentiche e costruire ricordi indimenticabili. Ogni viaggio che intraprendo è per me un'opportunità per crescere, conoscere e lasciarmi ispirare. Con PlanFree voglio rendere accessibile questo sogno a tutti, offrendo un'alternativa trasparente e solidale ai viaggi tradizionali. Non sono un'agenzia, ma un compagno di viaggio che vuole rendere il mondo più vicino a chi ha voglia di scoprirlo.</p>
+</section>
+
+<section id="packages">
+  <h2>Pacchetti disponibili</h2>
+  <div class="package-grid">
+    <div class="package-box"><h3>Luxury</h3><p>Viaggio top: massimo comfort, zero stress, hotel 5 stelle, esperienze esclusive.</p></div>
+    <div class="package-box"><h3>Comfort</h3><p>Perfetto per famiglie e viaggiatori tranquilli: alloggi comodi, itinerari semplici.</p></div>
+    <div class="package-box"><h3>Extreme</h3><p>Avventura pura: tenda, couchsurfing, mezzi locali e budget ridotto al minimo.</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contattami</h2>
+  <form action="https://formspree.io/f/mgvanpen" method="POST">
+    <label>Il tuo nome:<input type="text" name="nome" required></label>
+    <label>Il tuo cognome:<input type="text" name="cognome" required></label>
+    <label>Numero di telefono:<input type="tel" name="telefono" required></label>
+    <label>La tua email:<input type="email" name="email" required></label>
+    <label>Tipo di pacchetto:
+      <select name="pacchetto" required>
+        <option value="">-- Seleziona --</option>
+        <option value="Luxury">Luxury</option>
+        <option value="Comfort">Comfort</option>
+        <option value="Extreme">Extreme</option>
+      </select>
+    </label>
+    <label>Destinazione:<input type="text" name="destinazione" required></label>
+    <label>Periodo:
+      <select name="periodo" required>
+        <option value="">-- Seleziona mese --</option>
+        <option value="Gennaio">Gennaio</option>
+        <option value="Febbraio">Febbraio</option>
+        <option value="Marzo">Marzo</option>
+        <option value="Aprile">Aprile</option>
+        <option value="Maggio">Maggio</option>
+        <option value="Giugno">Giugno</option>
+        <option value="Luglio">Luglio</option>
+        <option value="Agosto">Agosto</option>
+        <option value="Settembre">Settembre</option>
+        <option value="Ottobre">Ottobre</option>
+        <option value="Novembre">Novembre</option>
+        <option value="Dicembre">Dicembre</option>
+      </select>
+    </label>
+    <label>Numero persone incluse nel viaggio:<input type="number" name="numero_persone" required></label>
+    <label>Budget massimo a persona (€):<input type="number" name="budget" required></label>
+    <label>Messaggio:<textarea name="message" rows="5" required></textarea></label>
+    <label><input type="checkbox" name="accetto" required> Accetto termini e condizioni</label>
+    <button type="submit">INVIA</button>
+  </form>
+</section>
+
+<section id="donate">
+  <h2>Supporta il progetto</h2>
+  <p>Se ti piace l’idea e vuoi aiutarmi a far crescere PlanFree:</p>
+  <a href="https://paypal.me/planfree?country.x=IT&locale.x=it_IT">
+    <img src="https://www.paypalobjects.com/it_IT/i/btn/btn_donateCC_LG.gif" alt="Dona con PayPal">
+  </a>
+</section>
+
+<footer>
+  <div>
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="termini.html">Termini e Condizioni</a> |
+    <a href="mailto:giofisc05@gmail.com">Contattami</a>
+  </div>
+  <p style="margin-top:1rem;">
+    PlanFree è un progetto personale ideato da Gioele Fiscella. Questo sito è non-profit e non è associato ad alcuna impresa o partita IVA. Tutti i dati raccolti attraverso i moduli sono trattati in modo strettamente riservato e non verranno condivisi con terze parti. Per qualsiasi informazione puoi contattarmi a <a href="mailto:giofisc05@gmail.com">giofisc05@gmail.com</a>.
+  </p>
+  <p style="margin-top:1rem;">&copy; 2025 PlanFree - Tutti i diritti riservati</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.2 });
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('.package-box').forEach(box => observer.observe(box));
+  });
+</script>
+
+</body>
+</html>
